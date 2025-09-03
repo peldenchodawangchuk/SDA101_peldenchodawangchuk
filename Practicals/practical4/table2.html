@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Tracker</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .percentage, .grade {
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1> Semester Grade Tracker</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Module</th>
+                <th>Assignment</th>
+                <th>Maximum Marks</th>
+                <th>Marks Obtained</th>
+                <th>Percentage</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MAT205</td>
+                <td>Figma Design</td>
+                <td>100</td>
+                <td>69</td>
+                <td class="percentage">85%</td>
+                <td class="grade">B</td>
+            </tr>
+            <tr>
+                <td>NWC201</td>
+                <td>Midterm Exam</td>
+                <td>100</td>
+                <td>78</td>
+                <td class="percentage">69%</td>
+                <td class="grade">B</td>
+            </tr>
+            <tr>
+                <td>DZO101</td>
+                <td>Final Exam</td>
+                <td>100</td>
+                <td>69</td>
+                <td class="percentage">69%</td>
+                <td class="grade">B</td>
+            </tr>
+            <tr>
+                <td>CSF101</td>
+                <td>Project</td>
+                <td>100</td>
+                <td>69</td>
+                <td class="percentage">69%</td>
+                <td class="grade">B</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

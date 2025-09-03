@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Room Maintenance</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Soft, light background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem 1rem;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-heading {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            color: #1e293b;
+            background-color: #f8fafc;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #3b82f6; /* Accent color for focus */
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .radio-input {
+            appearance: none;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            border: 2px solid #94a3b8;
+            transition: all 0.2s ease-in-out;
+            margin-right: 0.5rem;
+        }
+
+        .radio-input:checked {
+            border-color: #3b82f6;
+            background-color: #3b82f6;
+            transform: scale(1.1);
+        }
+
+        .radio-input:checked + span {
+            color: #1e293b;
+            font-weight: 600;
+        }
+        
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background-color: #22c55e; /* Standout green color */
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 10px rgba(34, 197, 94, 0.2);
+        }
+
+        .submit-button:hover {
+            background-color: #16a34a; /* Darker green on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(34, 197, 94, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1 class="form-heading">Hostel Room Maintenance Request</h1>
+    <form action="#">
+        <!-- Personal Information Section -->
+        <h2 class="form-heading text-lg font-bold mb-4">Personal Information</h2>
+        <div class="mb-4">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" pattern="[a-zA-Z\s]+" maxlength="50" class="form-input" required>
+        </div>
+
+        <div class="mb-4">
+            <label for="student-id" class="form-label">Student ID</label>
+            <input type="text" id="student-id" name="student-id" placeholder="02250123" pattern="[0-9]{8}" class="form-input" required>
+        </div>
+
+        <div class="mb-4">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="student.cst@rub.edu.bt" class="form-input" required>
+        </div>
+
+        <div class="mb-6">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="12345678" pattern="[0-9]{8}" class="form-input" required>
+        </div>
+
+        <hr class="my-6 border-gray-200">
+
+        <!-- Room Information Section -->
+        <h2 class="form-heading text-lg font-bold mb-4">Room Information</h2>
+        <div class="mb-4">
+            <label for="block" class="form-label">Block/Building Name</label>
+            <select id="block" name="block" class="form-select" required>
+                <option value="" disabled selected>Select your block</option>
+                <option value="A">Block A</option>
+                <option value="B">Block B</option>
+                <option value="C">Block C</option>
+                <option value="F">Block F</option>
+                <option value="RK">RK</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="room-number" class="form-label">Room Number</label>
+            <input type="number" id="room-number" name="room-number" placeholder="Room number (e.g., 205)" min="100" max="999" class="form-input" required>
+        </div>
+        
+        <div class="mb-6">
+            <label for="floor-number" class="form-label">Floor Number</label>
+            <input type="number" id="floor-number" name="floor-number" placeholder="Floor number" min="1" max="10" class="form-input" required>
+        </div>
+
+        <hr class="my-6 border-gray-200">
+
+        <!-- Issue Details Section -->
+        <h2 class="form-heading text-lg font-bold mb-4">Issue Details</h2>
+        <div class="mb-4">
+            <label for="issue-type" class="form-label">Type of Issue</label>
+            <select id="issue-type" name="issue-type" class="form-select" required>
+                <option value="" disabled selected>Select the type of issue</option>
+                <optgroup label="Electrical">
+                    <option value="electrical_power">Power Outlet Issue</option>
+                    <option value="electrical_lighting">Lighting Problem</option>
+                    <option value="electrical_other">Other Electrical Issue</option>
+                </optgroup>
+                <optgroup label="Plumbing">
+                    <option value="plumbing_leak">Water Leak</option>
+                    <option value="plumbing_drain">Blocked Drain</option>
+                    <option value="plumbing_tap">Leaking Tap</option>
+                    <option value="plumbing_other">Other Plumbing Issue</option>
+                </optgroup>
+                <optgroup label="Furniture">
+                    <option value="furniture_chair">Damaged Chair/Desk</option>
+                    <option value="furniture_bed">Bed/Mattress Issue</option>
+                    <option value="furniture_other">Other Furniture Issue</option>
+                </optgroup>
+                <optgroup label="Infrastructure">
+                    <option value="infra_door">Door/Window Problem</option>
+                    <option value="infra_wall">Wall/Ceiling Damage</option>
+                    <option value="infra_other">Other Infrastructure Issue</option>
+                </optgroup>
+                <optgroup label="Cleaning">
+                    <option value="cleaning_room">Room Cleaning Request</option>
+                    <option value="cleaning_common">Common Area Cleaning</option>
+                </optgroup>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <span class="form-label">Issue Priority/Urgency</span>
+            <div class="radio-group mt-2">
+                <label class="radio-label">
+                    <input type="radio" name="priority" value="emergency" class="radio-input" required>
+                    <span>Emergency</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="priority" value="high" class="radio-input">
+                    <span>High</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="priority" value="medium" class="radio-input">
+                    <span>Medium</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="priority" value="low" class="radio-input">
+                    <span>Low</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="description" class="form-label">Issue Description</label>
+            <textarea id="description" name="description" placeholder="Please describe the issue in detail..." class="form-textarea" rows="5" cols="50" minlength="20" maxlength="500" required></textarea>
+            <div class="text-right text-sm text-gray-500 mt-1">
+                <span id="word-count">0</span>/500 characters
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="submit-button">Submit Request</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const descriptionTextarea = document.getElementById('description');
+        const wordCountSpan = document.getElementById('word-count');
+
+        const updateWordCount = () => {
+            const currentLength = descriptionTextarea.value.length;
+            wordCountSpan.textContent = currentLength;
+        };
+
+        descriptionTextarea.addEventListener('input', updateWordCount);
+
+        // Initial count
+        updateWordCount();
+    });
+</script>
+
+</body>
+</html>

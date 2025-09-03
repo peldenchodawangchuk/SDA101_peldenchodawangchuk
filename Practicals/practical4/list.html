@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Events</title>
+    <style>
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        ol {
+            list-style-type: none;
+            counter-reset: event-counter;
+            padding: 0;
+            margin: 0;
+        }
+
+        ol li {
+            counter-increment: event-counter;
+            background-color: #e9f5e9;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-left: 5px solid #4CAF50;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            position: relative;
+        }
+        
+        ol li::before {
+            content: "0" counter(event-counter) ".";
+            position: absolute;
+            left: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        ol li:hover {
+            transform: translateY(-5px);
+            background-color: #d1e8d1;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        
+        ul li {
+            margin-bottom: 5px;
+            color: #555;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "➡️";
+            position: absolute;
+            left: 0;
+        }
+
+        .event-name {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upcoming College Events</h1>
+        <ol>
+            <li>
+                <span class="event-name">Annual Tech Symposium</span>
+                <ul>
+                    <li> Time: 9:00 AM - 5:00 PM</li>
+                    <li>  Location: Convention Hall</li>
+                </ul>
+            </li>
+            <li>
+                <span class="event-name">Foundation Day</span>
+                <ul>
+                    <li>Time: 12:00 PM - 8:00 PM</li>
+                    <li>Location: Convention Hall</li>
+                </ul>
+            </li>
+            <li>
+                <span class="event-name">Guest Lecture: The Future of AI</span>
+                <ul>
+                    <li>Time: 3:30 PM - 5:00 PM</li>
+                    <li>Location: Science Building, Room 101</li>
+                </ul>
+            </li>
+            <li>
+                <span class="event-name">BUSF Tournament</span>
+                <ul>
+                    <li>Time: 1:00 PM - 10:00 PM</li>
+                    <li>Location: College Gym</li>
+                </ul>
+            </li>
+            <li>
+                <span class="event-name">Student Art Exhibition</span>
+                <ul>
+                    <li>Time: 10:00 AM - 6:00 PM</li>
+                    <li>Location: Convention Hall</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+
+</body>
+</html>
